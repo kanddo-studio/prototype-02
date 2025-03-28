@@ -1,80 +1,86 @@
-# **prototype-01**  
-<img src="https://github.com/user-attachments/assets/0f54afb5-905b-4030-acb2-299670106e5d" width="420">
+# **prototype-02**  
 
-A **2D platformer prototype** built using **Phaser**, **TypeScript**, **Electron**, and **Vite**. The project serves as a foundation for developing platformer games with smooth physics, animations, and desktop integration.  
+An **isometric grid-based prototype** built using **Phaser 3** and **TypeScript**. This project serves as a foundation for developing isometric games with keyboard and mouse-based movement, pathfinding, and camera tracking.
 
 ## **1. Technologies Used**  
 
 ### **1.1 Core Technologies**  
 - **Phaser 3** – Game engine for 2D games  
 - **TypeScript** – Type-safe JavaScript for better maintainability  
-- **Electron** – Desktop application framework  
-- **Vite** – Fast development and build tool  
 
 ### **1.2 Key Features**  
-- **Platformer mechanics**: movement and jumping  
-- **Sprite animations** with frame-based rendering  
-- **Physics-based interactions** using Phaser's arcade physics  
-- **Desktop & Web support** with Electron and Vite  
-- **Game scenes management** using Phaser's Scene API  
-- **Optimized FPS control** with a custom `FPSScene` class  
+- **Isometric grid system**: 96x48 tile grid with 64px tiles  
+- **Player movement**:  
+  - Arrow keys for immediate movement (300ms/tile)  
+  - Mouse clicks with A* pathfinding (150ms/tile)  
+- **Pathfinding**: A* algorithm with Manhattan distance heuristic  
+- **Obstacles**: Randomly generated (20% chance per tile)  
+- **Camera system**: Smooth player-following camera with bounds  
+- **Visual feedback**: Tile hover and path highlighting  
+- **Smooth animations**: Tween-based movement with Sine.easeInOut easing  
 
 ## **2. Project Structure**  
 
 ```plaintext
 /src
-  ├── assets/             # Game assets (sprites, audio, etc.)
-  ├── config/             # Configurations (Electron, FPS settings)
-  ├── constants/          # Game-related constants
-  ├── entities/           # Game objects (Player, Platforms)
-  ├── scenes/             # Game scenes (Main scene, FPS controller)
-  ├── main.ts             # Game entry point
-  ├── game.ts             # Phaser game setup
-  ├── electron/           # Electron configuration
+  ├── assets/             # Game assets (if added: sprites, etc.)
+  ├── scenes/             # Game scenes
+  │   └── MainScene.ts    # Main isometric game scene
+  ├── main.ts             # Game entry point (assumed)
+  ├── game.ts             # Phaser game setup (assumed)
 ```
+
+*Note: This structure assumes a basic setup. Adjust based on your full project.*
 
 ## **3. Development**  
 
 ### **3.1 Install Dependencies**  
-Using **Yarn** (recommended):  
-```sh
-yarn install
-```
-Or using **npm**:  
+Using **npm** (recommended):  
 ```sh
 npm install
 ```
 
-### **3.2 Start the web version (browser)**
+### **3.2 Compile TypeScript**  
+Ensure a `tsconfig.json` is configured, then run:  
 ```sh
-yarn start:dev:web
+tsc
 ```
-Runs the game in a browser using **Vite**.
 
-### **3.3 Start the desktop version (Electron)**
+### **3.3 Start the Game**  
+Serve the game using a local server (e.g., `live-server`):  
 ```sh
-yarn start:dev:desktop
+npm install -g live-server
+live-server
 ```
-Runs the game as a **desktop app** with **Electron**.
+Open `http://localhost:8080` in your browser.
 
+*Note: If using a bundler like Vite, replace with appropriate commands (e.g., `npm run dev`).*
 
-## **4. Build & Distribution**  
+## **4. Controls**  
+- **Arrow Keys**: Move the player in isometric directions  
+  - Left: (-1, 1)  
+  - Right: (1, -1)  
+  - Up: (-1, -1)  
+  - Down: (1, 1)  
+- **Mouse Click**: Calculate and follow a path to the clicked tile  
+- **ESC**: Cancel current movement  
 
-### **4.1 Build for Web**
+## **5. Build & Distribution**  
+### **5.1 Build for Web**  
+If using a bundler, compile the project:  
 ```sh
-yarn build:prod:web
+npm run build
 ```
-Compiles TypeScript and builds the web version.
+This generates a distributable web version.
 
-### **4.2 Build for Windows (Electron)**
-```sh
-yarn build:prod:windows
-```
-Generates a `.exe` file for **Windows**.
+*Note: Add specific build commands if using Vite or another tool.*
 
-## **5. Future Improvements**  
-Enhancements will be introduced in future prototypes based on this one. Check out the next iteration:
-- [prototype-02]()
+## **6. Future Improvements**  
+- Add player sprites and animations  
+- Optimize pathfinding for larger grids with object pooling  
+- Implement diagonal movement support  
+- Introduce UI for error feedback and game status  
+- Check out the previous iteration: [prototype-01](https://github.com/link-to-prototype-01)  
 
-## **6. License**F  
+## **7. License**  
 This project is licensed under the **MIT License**.  
