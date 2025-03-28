@@ -1,4 +1,5 @@
-# **prototype-02**  
+# **prototype-01**  
+<img src="https://github.com/user-attachments/assets/0f54afb5-905b-4030-acb2-299670106e5d" width="420">
 
 A **2D platformer prototype** built using **Phaser**, **TypeScript**, **Electron**, and **Vite**. The project serves as a foundation for developing platformer games with smooth physics, animations, and desktop integration.  
 
