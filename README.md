@@ -1,4 +1,5 @@
 # **prototype-02**  
+<img src="https://github.com/user-attachments/assets/b73fa3e2-74b1-444d-b1fb-c84cbcd69ed6" width="420">
 
 An **isometric grid-based prototype** built using **Phaser 3** and **TypeScript**. This project serves as a foundation for developing isometric games with keyboard and mouse-based movement, pathfinding, and camera tracking.
 
