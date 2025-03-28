@@ -22,7 +22,7 @@
     "phaser": "^3.88.2"
   },
   "build": {
-    "appId": "com.exemplo.app",
+    "appId": "com.prototype-02.app",
     "productName": "prototype-02",
     "files": [
       "dist/**/*",
