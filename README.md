@@ -80,8 +80,7 @@ This generates a distributable web version.
 - Add player sprites and animations  
 - Optimize pathfinding for larger grids with object pooling  
 - Implement diagonal movement support  
-- Introduce UI for error feedback and game status  
-- Check out the previous iteration: [prototype-01](https://github.com/link-to-prototype-01)  
+- Introduce UI for error feedback and game status 
 
 ## **7. License**  
 This project is licensed under the **MIT License**.  
